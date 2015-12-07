@@ -72,10 +72,10 @@ class Snake(object):
 	self.grid = Grid
 	self.apple = Apple(self.grid)
 	self.init = Init
-	self.snake = [(12,6),(12,7)] 
-	self.status = ["run","stop"]   # 0 -> stop 1->run
+	self.snake = [(12,6),(12,7)]         #initial snake data
+	self.status = ["run","stop"]   
 	self.score = 0
-	self.speed =300
+	self.speed =300			    #default snake speed
 	self.isOver = False
 	self.direction = 'Right'
 	self.privious = ""
@@ -199,7 +199,7 @@ class Game(Frame):
 		if message == 'ok':
 		    sys.exit()
 	self.after(self.snake.speed,self.run)
-    def key_release(self, event):
+    def key_release(self, event):         #key event
         key = event.keysym
 	direc = {'Up','Down','Left','Right'}
         if key in direc:   
